@@ -29,14 +29,15 @@ for car in cars:
 body = 'From: carscraper@matthewfrost.co \n Subject: Cars Found \n'
 for car in tsi:
     body += car.getDetails()
+    
 
 m1 = message.Message()
+
 m1.add_header('from','carscraper@matthewfrost.co')
-m1.add_header('to','matthewfrosty@gmail.com')
 m1.add_header('subject','Cars found')
 m1.set_payload(body + '\n')
 
 
-server.sendmail("carscraper@matthewfrost.co", "matthewfrosty@gmail.com", m1.as_string())
+server.sendmail("carscraper@matthewfrost.co", "myemail", m1.as_string())
     
             
